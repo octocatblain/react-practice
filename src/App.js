@@ -15,12 +15,16 @@ function App() {
     setName("");
   }
 
-  const handleDelete = (deletedSub) =>{
+  const handleDelete = (deletedSub) => {
     const newSubs = subscribers.filter((subscribers) => subscribers !== deletedSub)
     setSubscribers(newSubs);
   }
 
-  const notification = false;
+  const [notification, setNotification] = useState(false);
+
+  const handleNotification = () => {
+    setNotification(!notification);
+  }
 
 
   function sayHi() {
@@ -45,19 +49,25 @@ function App() {
           <ul className='sub_list'>
             {
               subscribers.map((sub, index) => (
-                <li key={index}>{sub} <button onClick={()=>handleDelete(sub)} className='delete_btn' type='submit'>Delete</button></li> 
+                <li key={index}>{sub} <button onClick={() => handleDelete(sub)} className='delete_btn' type='submit'>Delete</button></li>
               ))
             }
           </ul>
 
         </div>
         <div className='others'>
+        {notification ? <div className='notification_bar'>Success :)</div> : ""}
+
           <p className='text' style={{ color: "var(--tertiary-clr)", fontSize: "2rem" }}>
             {intro}
           </p>
           <button onClick={sayHi} type="button">Say Hi</button>
 
           <button onClick={() => sayMyName("Blain")} type="button">Say My Name</button>
+
+         
+
+          <button onClick={()=>handleNotification()} className='notif_toggle'>Toggle Notification</button>
         </div>
       </div>
     </div>
