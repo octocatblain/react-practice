@@ -15,6 +15,13 @@ function App() {
     setName("");
   }
 
+  const handleDelete = (deletedSub) =>{
+    const newSubs = subscribers.filter((subscribers) => subscribers !== deletedSub)
+    setSubscribers(newSubs);
+  }
+
+  const notification = false;
+
 
   function sayHi() {
     alert("hi doofus")
@@ -34,10 +41,11 @@ function App() {
             <input type='text' value={name} onChange={(e) => setName(e.target.value)} />
             <button type='submit'>Subscribe</button>
           </form>
-          <ul>
+          <h5 className='title'>All Subscribers</h5>
+          <ul className='sub_list'>
             {
               subscribers.map((sub, index) => (
-                <li key={index}>{sub}</li>
+                <li key={index}>{sub} <button onClick={()=>handleDelete(sub)} className='delete_btn' type='submit'>Delete</button></li> 
               ))
             }
           </ul>
