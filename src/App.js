@@ -5,6 +5,8 @@ import Home from './Pages/Home/Home';
 import Blog from './Pages/Blog/Blog';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
+import Subscribers from './Apps/Subscribers/Subscribers';
+import Counter from './Apps/Counter/Counter';
 
 function App() {
 
@@ -15,6 +17,9 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/blog" element={<Blog/>}/>
+        <Route path="/subscribers" element={<Subscribers/>}/>
+        <Route path="/counter" element={<Counter/>}/>
+
       </Routes>
     </BrowserRouter>
 

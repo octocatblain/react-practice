@@ -1,0 +1,33 @@
+.home {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    color: white;
+
+    place-items: center;
+
+    .wrapper {
+        padding-block: 2rem;
+
+
+        >ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+
+            >li {
+                padding-inline-start: 0;
+                font-size: 1rem;
+
+                >Link{
+                    color: white;
+                    text-decoration: none;
+                }
+
+            }
+        }
+    }
+}

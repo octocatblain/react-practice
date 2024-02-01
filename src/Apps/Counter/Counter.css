@@ -1,0 +1,30 @@
+.counter {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    .count_display {
+        font-size: 3rem;
+    }
+
+    .count_wrapper {
+        padding: 3rem;
+        min-width: 50dvw;
+        min-height: 30dvh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 4rem;
+
+        .increment,
+        .decrement {
+            border-radius: 50%;
+            padding: 1rem 1.5rem;
+            border: 1px solid grey;
+            border: none;
+            outline: none;
+            font-size: 2rem;
+        }
+    }
+}
